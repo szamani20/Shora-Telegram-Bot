@@ -2,6 +2,8 @@ import time
 import telepot
 from telepot.namedtuple import ForceReply
 from telepot.namedtuple import InlineKeyboardMarkup, InlineKeyboardButton
+from settings import *
+
 
 message_with_inline_keyboard = None
 live_users = []
@@ -169,8 +171,6 @@ def on_callback_query(msg):
         bot.answerCallbackQuery(query_id, text='حلله!', show_alert=True)
 
 
-TOKEN = 'Thats for Shora! not me :)'
-
 bot = telepot.Bot(TOKEN)
 answerer = telepot.helper.Answerer(bot)
 
@@ -180,4 +180,4 @@ bot.message_loop({'chat': on_chat_message,
 print('Listening ...')
 
 while 1:
-    time.sleep(10)
+    time.sleep(SLEEP_TIME)
